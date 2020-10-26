@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Diet Chart</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
+    <script src='forDietChartOutput.js'></script>
+</head>
+
+<body>
+    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Diet Chart</h2>
+                    <form method="POST">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="gender" id='gender'>
+                                        <option disabled="disabled" selected="selected">Gender</option>
+                                        <option value='m'>Male</option>
+                                        <option value='f'>Female</option>
+                                        <option value='t'>Other</option>
+                                    </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <!--div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="class" id='goal'>
+                                    <option disabled="disabled" selected="selected">What is your goal?</option>
+                                    <option value='reduce_weight'>Reduce weight</option>
+                                    <option value='increase_weight'>Increase weight</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div-->
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="class" id='disease'>
+                                    <option disabled="disabled" selected="selected">Do you have any of the lifestyle disease?</option>
+                                    <option value='high_bp'>High BP</option>
+                                    <option value='low_bp'>Low BP</option>
+                                    <option value='diabetes'>Diabetes</option>
+                                    <option value='thyroid'>Thyroid</option>
+                                    <option value='none'>None</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="number" placeholder="What is your Target weight?(kg)" name="target_weight" id='target_weight'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="class" id='activity_level'>
+                                    <option disabled="disabled" selected="selected">What is your activity level?</option>
+                                    <option value='sedentary'>Sedentary</option>
+                                    <option value='low_active'>Low Active</option>
+                                    <option value='active'>Active</option>
+                                    <option value='very_active'>Very Active</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="class" id='food_prefer'>
+                                    <option disabled="disabled" selected="selected">What is your food preferance</option>
+                                    <option value='veg'>Vegetarian</option>
+                                    <option value='veg_with_egg'>Vegetarian and Egg</option>
+                                    <option value='non_veg'>Non-Vegetarian</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="number" placeholder="What is your current age?" name="current_age" id='current_age'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="number" placeholder="What is your current height?(cm)" name="current_height" id='current_height'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="number" placeholder="What is your current weight?(kg)" name="current_weight" id='current_weight'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-t-30">
+                            <a href="#"><button class="btn btn--radius btn--green" id='submit' type="button">Submit</button></a>
+                        </div>
+                    	</br>
+                        <p id="demo"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
